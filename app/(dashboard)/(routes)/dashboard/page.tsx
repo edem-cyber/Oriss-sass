@@ -9,7 +9,6 @@ export default function Dashboard() {
 
             <Link href={'/'}>
                 <Button variant={"destructive"}>Home</Button>
-                <UserButton afterSignOutUrl="/" showName userProfileMode='navigation' ></UserButton>
             </Link>
         </div>
     );
