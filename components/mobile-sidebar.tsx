@@ -15,7 +15,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 const MobileSidebar = (
     // {apiLimitCount, isPro = false}:MobileSidebarProps
 ) => {
-    // TO FIX HYDRATION ERROR ON BUTTON
+    // TO FIX HYDRATION ERROR
     const [isMounted, setIsMounted] = useState(false);
 
         useEffect(() => {
