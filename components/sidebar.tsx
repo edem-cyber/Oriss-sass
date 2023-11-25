@@ -24,7 +24,7 @@ const montserrat = Montserrat({
 
 const routes = [
   {
-    label: "DashboardPage",
+    label: "Dashboard",
     icon: LayoutDashboard,
     href: "/dashboard",
     color: "text-sky-500",
