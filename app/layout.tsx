@@ -2,9 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { ClerkProvider } from '@clerk/nextjs';
-import { Suspense } from 'react';
-import Loading from './loading';
-
+import NextTopLoader from 'nextjs-toploader';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,9 +21,15 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>
-          <Suspense fallback={<Loading />}>
-            {children}
-          </Suspense>
+          <NextTopLoader
+            color="#198838"
+            crawlSpeed={100}
+            // height={3}
+            crawl={true}
+            // showSpinner={true}
+            easing="ease-in"
+            />
+          {children}
         </body>
       </html>
     </ClerkProvider>
