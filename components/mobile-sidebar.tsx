@@ -15,6 +15,17 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 const MobileSidebar = (
     // {apiLimitCount, isPro = false}:MobileSidebarProps
 ) => {
+    // TO FIX HYDRATION ERROR ON BUTTON
+    const [isMounted, setIsMounted] = useState(false);
+
+        useEffect(() => {
+            setIsMounted(true)
+        }, [])
+    
+        if(!isMounted) {
+            return null;
+        }
+        
     return (
         <Sheet >
             <SheetTrigger >
@@ -22,7 +33,7 @@ const MobileSidebar = (
                     <Menu />
                 </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="p-0" suppressHydrationWarning>
+            <SheetContent side="left" className="p-0">
                 <Sidebar />
             </SheetContent>
         </Sheet>

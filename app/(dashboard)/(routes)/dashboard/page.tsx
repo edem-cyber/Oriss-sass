@@ -3,7 +3,7 @@ import { UserButton } from '@clerk/nextjs';
 import Link from 'next/link';
 import React from 'react';
 
-export default function Dashboard() {
+export default function DashboardPage() {
     return (
         <div>
 
