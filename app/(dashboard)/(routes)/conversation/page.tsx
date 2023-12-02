@@ -79,7 +79,7 @@ const ConversationPage = () => {
                             <div className="p-3 w-full rounded-full bg-white">
                                 <form
                                     //   onSubmit={form.handleSubmit(onSubmit)}
-                                    className="rounded-3xl w-full p-2 md:px-6 grid grid-cols-12 gap-2  "
+                                    className="rounded-3xl w-full px-4 md:px-6 grid grid-cols-12 gap-2  "
                                 >
                                     <FormField
                                         name="prompt"
