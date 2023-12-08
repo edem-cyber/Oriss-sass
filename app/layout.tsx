@@ -1,16 +1,19 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import { ClerkProvider } from '@clerk/nextjs';
-import NextTopLoader from 'nextjs-toploader';
 
-const inter = Inter({ subsets: ['latin'] });
+import { ModalProvider } from "@/components/modal-provider";
+import { ToasterProvider } from "@/components/toaster-provider";
+import { CrispProvider } from "@/components/crisp-provider";
+
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Oriss',
-  description: 'Your AI Assistant',
+  title: "Genius",
+  description: "AI Platform",
 };
-
 
 export default function RootLayout({
   children,
@@ -20,15 +23,10 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
+        <CrispProvider />
         <body className={inter.className}>
-          <NextTopLoader
-            color="#198838"
-            crawlSpeed={100}
-            // height={3}
-            crawl={true}
-            // showSpinner={true}
-            easing="ease-in"
-            />
+        <ModalProvider />
+        <ToasterProvider />
           {children}
         </body>
       </html>
