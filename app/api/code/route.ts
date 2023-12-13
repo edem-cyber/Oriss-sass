@@ -26,12 +26,15 @@ export async function POST(
         const body = await req.json();
         const { messages } = body;
 
+        console.log('[OPENAI_API_KEY]', process.env.OPENAI_API_KEY);
+
         if (!userId) {
             return new NextResponse("Unauthorized", { status: 401 });
         }
 
         if (!configuration.apiKey) {
-            return new NextResponse("OpenAI API Key not configured.", { status: 500 });
+            console.log('[OPENAI_API_KEY]', process.env.OPENAI_API_KEY);
+            // return new NextResponse("OpenAI API Key not configured.", { status: 500 });
         }
 
         if (!messages) {
@@ -59,6 +62,7 @@ export async function POST(
 
     } catch (error) {
         console.log('[CODE_ERROR]', error);
+        console.log('[OPENAI_API_KEY]', process.env.OPENAI_API_KEY);
         return new NextResponse("Internal Error", { status: 500 });
     }
 }
